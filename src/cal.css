@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+body {
+  background-color: #070707;
+}
+.cal-wrapper {
+  width: 1575px;
+  height: 800px;
+  background-color: #888888;
+  margin-right: 100px;
+  margin-left: 150px;
+  margin-bottom: 00px;
+  margin-top: 100px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #000000;
+}
+#nav-txt {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.57; 
+  color: white;
+  background-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+
+}
+.topnav {
+  overflow: hidden;
+  background-color: #1b1b1b00fa;
+  line-height: 1.57;
+}
+.topnav a.active {
+  background-color: #1b1b1b;
+  color: white;
+  border-radius: 4px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #070707;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.side-nav-opn {
+  position:absolute;
+  color:white;
+  top: 10px; 
+  left: 1850px;
+  font-size:30px;
+  cursor:pointer;
+  transition: 0.1s
+}
+.side-nav-opn:hover {
+  color: #5b5b5b
+}
+.popout-txt{
+  border-bottom: 0.5px solid #4c4b4b;
+  margin-top: 15px;
+  font-size: 22px !important;
+  font-family: 'Poppins', sans-serif;
+
+}
+.popout-txt:hover {
+  text-decoration: none !important;
+  border-bottom: 0.5px solid white;
+}
+.closebtn:hover {
+  text-decoration: none !important;
+}
+.closebtn {
+  font-family: 'Poppins', sans-serif;
+}
+#home-icon {
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 2em;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  color: white;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  transition: 0.3s;
+  font-size: 2em
+}
+#home-icon:hover {
+  color: #5b5b5b
+}
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 500;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
+}
+.day-text {
+   font-family: 'Poppins', sans-serif;
+   border-bottom: 2px solid #1b1b1b;
+   overflow: auto;
+}
+.day-text h1 {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    line-height: 1.57;
+    color: black;
+    background-color: transparent;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased !important;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 27px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 40px;
+}
+.v1-1{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 225px;
+}
+.v1-2{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 450px;
+  margin-top: -725px;
+}
+.v1-3{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 675px;
+  margin-top: -725px;
+}
+.v1-4{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 900px;
+  margin-top: -725px;
+}
+.v1-5{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 1125px;
+  margin-top: -725px;
+}
+.v1-6{
+  border-left: 2px solid #1b1b1b;
+  height: 725px;
+  margin-left: 1350px;
+  margin-top: -725px;
+}
+.h1-1{
+  border-bottom: 2px solid #1b1b1b;
+  position: absolute;
+  width: 1600px;
+  top: 370px;
+}
+.h1-2{
+  border-bottom: 2px solid #1b1b1b;
+  position: absolute;
+  width: 1600px;
+  top: 515px;
+}
+.h1-3{
+  border-bottom: 2px solid #1b1b1b;
+  position: absolute;
+  width: 1600px;
+  top: 660px;
+}
+.h1-4{
+  border-bottom: 2px solid #1b1b1b;
+  position: absolute;
+  width: 1600px;
+  top: 807px;
+}
+
+
+
+.sun {
+  margin-left:30px !important;
+}
+.mon {
+  margin-left: 100px !important;
+}
+.tues {
+  margin-left: 65px !important;
+}
+.wens {
+  margin-left: 70px !important;
+}
+.thurs {
+  margin-left: 65px !important;
+}
+.frid {
+  margin-left: 75px !important;
+}
+.sat {
+  margin-left: 85px !important;
+}
+.month-title {
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  left: 870px;
+  top: 80px;
+}
+.lines h4 {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.movef {
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  left: 1100px;
+  top: 70px;
+  font-size: 40px;
+  transition: 0.3s;
+    background-color: #070707;
+  outline: none;
+  border: none;
+}
+.moveb {
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  left: 770px;
+  top: 70px;
+  font-size: 40px;
+  transition: 0.3s;
+  background-color: #070707;
+  outline: none;
+  border: none;
+}
+.movef:hover {
+  color: #444343
+}
+.moveb:hover {
+  color: #444343
+}
+.event-text {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+.day-1 {
+  position: absolute;
+  top: 225px;
+  left: 1280px;
+}
+.day-2 {
+  position: absolute;
+  top: 225px;
+  left: 1505px;
+}
+.day-3 {
+  position: absolute;
+  top: 370px;
+  left: 155px;
+}
+.day-4 {
+  position: absolute;
+  top: 370px;
+  left: 380px;
+}
+.day-5 {
+  position: absolute;
+  top: 370px;
+  left: 605px;
+}
+.day-6 {
+  position: absolute;
+  top: 370px;
+  left: 830px;
+}
+.day-7 {
+  position: absolute;
+  top: 370px;
+  left: 1055px;
+}
+.day-8 {
+  position: absolute;
+  top: 370px;
+  left: 1280px;
+}
+.day-9 {
+  position: absolute;
+  top: 370px;
+  left: 1505px;
+}
+.day-10 {
+  position: absolute;
+  top: 515px;
+  left: 155px;
+}
+.day-11 {
+  position: absolute;
+  top: 515px;
+  left: 380px;
+}
+.day-12 {
+  position: absolute;
+  top: 515px;
+  left: 605px;
+}
+.day-13 {
+  position: absolute;
+  top: 515px;
+  left: 830px;
+}
+.day-14 {
+  position: absolute;
+  top: 515px;
+  left: 1055px;
+}
+.day-15 {
+  position: absolute;
+  top: 515px;
+  left: 1280px;
+}
+.day-16 {
+  position: absolute;
+  top: 515px;
+  left: 1505px;
+}
+.day-17 {
+  position: absolute;
+  top: 660px;
+  left: 155px;
+}
+.day-18 {
+  position: absolute;
+  top: 660px;
+  left: 380px;
+}
+.day-19 {
+  position: absolute;
+  top: 660px;
+  left: 605px;
+}
+.day-20 {
+  position: absolute;
+  top: 660px;
+  left: 830px;
+}
+.day-21 {
+  position: absolute;
+  top: 660px;
+  left: 1055px;
+}
+.day-22 {
+  position: absolute;
+  top: 660px;
+  left: 1280px;
+}
+.day-23 {
+  position: absolute;
+  top: 660px;
+  left: 1505px;
+}
+.day-24 {
+  position: absolute;
+  top: 810px;
+  left: 155px;
+}
+.day-25 {
+  position: absolute;
+  top: 810px;
+  left: 380px;
+}
+.day-26 {
+  position: absolute;
+  top: 810px;
+  left: 605px;
+}
+.day-27 {
+  position: absolute;
+  top: 810px;
+  left: 830px;
+}
+.day-28 {
+  position: absolute;
+  top: 810px;
+  left: 1055px;
+}
+.day-29 {
+  position: absolute;
+  top: 810px;
+  left: 1280px;
+}
+.day-30 {
+  position: absolute;
+  top: 810px;
+  left: 1505px;
+}
+li {
+  font-size: 13px;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="images/logo-test-4.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="index.js"></script>
+  <link rel="stylesheet" href="titlebar.css">
+  <link rel="stylesheet" href="top.css">
+    <title>Calender</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+</head>
+<body>
+  <div class="titlebar">
+    <div class="left-content topcontent">
+      <img src="images/logo-medium-sm-white.png" onclick="location.href='index.html'">  
+    </div>
+    <div class="dragbar">   
+    </div>
+    <div class="right-content topcontent">
+      <div> 
+        <button id="minimize" class="minmax">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 1.24" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <rect width="15" height="1.24"></rect>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button id="maximize" class="minmax">
+            <span>
+                <span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M15,15H0V0H15ZM1.24,13.76H13.76V1.24H1.24Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button class="exitbtn" id="close" >
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M14.34,15a.65.65,0,0,1-.46-.19L.19,1.12a.67.67,0,0,1,0-.93.67.67,0,0,1,.93,0L14.81,13.88a.67.67,0,0,1,0,.93A.66.66,0,0,1,14.34,15Z"></path>
+                        </g>
+                        <g>
+                            <path d="M.65,15a.65.65,0,0,1-.46-.19.67.67,0,0,1,0-.93L13.88.19a.67.67,0,0,1,.93,0,.67.67,0,0,1,0,.93L1.12,14.81A.66.66,0,0,1,.65,15Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+<div class="topnav">
+  <a id="nav-txt" href="index.html" style="margin-left: 29.74%;">Home</a>
+  <a id="nav-txt" class="active" href="top.html" style="margin-left: 3%;">Top Anime</a>
+  <a id="nav-txt" href="tv.html" style="margin-left: 3%;">Shows</a> 
+  <a id="nav-txt" href="movies.html" style="margin-left: 3%;">Movies</a>
+  <a id="nav-txt" href="search.html" style="margin-left: 3%;">Search</a>
+</div>
+<a href="index.html"><div href="index.html" id="home-icon" class="fab fa-cuttlefish fa-2x" aria-hidden="true"></div></a>
+<div id="mySidenav" class="sidenav" style="width: 0px;">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="popout-txt" href="index.html">Home</a>
+  <a class="popout-txt" href="tv.html">Shows</a>
+  <a class="popout-txt" href="movies.html">Movies</a>
+  <a class="popout-txt" href="search.html">Search</a>
+  <a class="popout-txt" href="calender.html">Calender</a>
+  <a class="popout-txt" href="new.html">Join News Letter</a>
+  <a class="popout-txt" href="tos.html">Terms Of Service</a>
+</div>
+<span onclick="openNav()" class="side-nav-opn">☰</span>
+
+<script src="./renderer.js"></script>
+</body>
+</html>

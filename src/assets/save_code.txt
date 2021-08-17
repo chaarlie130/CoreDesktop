@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="index.js"></script>
+    <script src="assets/movie.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="titlebar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="all" id="fa-main"></style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="icon" href="icons/app-icon.png">
+    <title>Core Anime</title>
+</head>
+<body class="home-body">
+  <div class="titlebar">
+    <div class="left-content topcontent">
+      <img src="images/logo-medium-sm-white.png" onclick="location.href='index.html'">  
+    </div>
+    <div class="dragbar">   
+    </div>
+    <div class="right-content topcontent">
+      <div> 
+        <button id="minimize" class="minmax">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 1.24" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <rect width="15" height="1.24"></rect>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button id="maximize" class="minmax">
+            <span>
+                <span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M15,15H0V0H15ZM1.24,13.76H13.76V1.24H1.24Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button class="exitbtn" id="close" >
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M14.34,15a.65.65,0,0,1-.46-.19L.19,1.12a.67.67,0,0,1,0-.93.67.67,0,0,1,.93,0L14.81,13.88a.67.67,0,0,1,0,.93A.66.66,0,0,1,14.34,15Z"></path>
+                        </g>
+                        <g>
+                            <path d="M.65,15a.65.65,0,0,1-.46-.19.67.67,0,0,1,0-.93L13.88.19a.67.67,0,0,1,.93,0,.67.67,0,0,1,0,.93L1.12,14.81A.66.66,0,0,1,.65,15Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+    <div class="topnav">
+        <a href="index.html" style="margin-left: 29.74%;">Home</a>
+        <a href="calender.html" href="top.html" style="margin-left: 3%;">Top Anime</a>
+        <a href="tv.html" style="margin-left: 3%;">Shows</a> 
+        <a href="movies.html" style="margin-left: 3%;" class="active">Movies</a>
+        <a href="search.html" style="margin-left: 3%;">Search</a>
+    </div>
+    <div id="mySidenav" class="sidenav" style="width: 0px;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="popout-txt" href="index.html">Home</a>
+        <a class="popout-txt" href="tv.html">Shows</a>
+        <a class="popout-txt" href="movies.html">Movies</a>
+        <a class="popout-txt" href="search.html">Search</a>
+        <a class="popout-txt" href="calender.html">Calender</a>
+        <a class="popout-txt" href="new.html">Join News Letter</a>
+        <a class="popout-txt" href="tos.html">Terms Of Service</a>
+    </div>
+    <span onclick="openNav()" class="side-nav-opn">☰</span>
+    
+    
+<div class="main-container">
+    <div class="main-text-holder">
+        <h1>Your Name</h1>
+        <p>Your Name tells the story of a high school boy in Tokyo and a high school girl in the Japanese countryside who suddenly and inexplicably begin to swap bodies. The film stars Ryunosuke Kamiki and Mone Kamishiraishi</p>
+    <div class="button-container">
+        <button id="play">Play Now ►</button>
+        <button id="info">More Details</button>
+    </div>
+    </div>
+</div>
+<div class="all-rows"></div>
+<div class="container2">
+        <h2 class="genre-title2">Award Winning Movies</h2>
+        <div class="col-xs-12">
+            <div class="well">
+                <div id="myCarousel2" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail" name="Hunter x Hunter" onclick="getinfo()">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3m6RsNQcv60ViQhNjpp0Ad6RUQ_i8DJJqYcaqoebUQr7BVCGJ" alt="Image" class="img-responsive">
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail" name="attack on titan" onclick="getinfo()">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpZTunPPjCAwXW8gkZ4Vir4yH-PjEWGp6JHsRbqY0kyHjiF1-H" alt="Image" class="img-responsive">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail" name="My Hero Acedamia" onclick="getinfo()">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ojXu8MfMK-fK-X61VPzE826mT0Qi7mI-grUAFK0iGR_cD57j" alt="Image" class="img-responsive"> 
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail" name="One Piece" onclick="getinfo()">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Giovanni%27s_Island.jpg" alt="Image" class="img-responsive">  
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail" name="Erased" onclick="getinfo()">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6wAMW5FJ6P0VRoUxwiQY8lMRfI_k3icJXVIeYe6ofcI2zRVF" alt="Image" class="img-responsive">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>                                
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail" name="FUll Metal Alchemist Brotherhood" onclick="getinfo()">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV6A0nauCp-g7xGrXqQTzoScHfPcsO5jYAQOTef5KLjiWYqo6n" alt="Image" class="img-responsive">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>                                
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6293/6293788_so.jpg" alt="Image" class="img-responsive" name="Black Clover" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="Image" class="img-responsive" name="Violet Evergarden" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxrSUhRl8H3Hb8SC_cCBqgebzj68khZIq4l3LpNwb5gooNjvYF" alt="Image" class="img-responsive" name="Demon Slayer" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>                               
+                                </div>
+                        </div>
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9eyBTSQKT046KVw4JqBy_lC-LSgkW5eZ382LHYMFw31zSIA4" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://occ-0-300-299.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTXQySNEvNJQTYqUjEOFsjTPZdJgpjgSVp1SgKDdDN-9FqKUbfasD8B4JDA7Bwe2W7lZK93LhE3l6ljbRb4C_VFaEmvA.jpg" https:="" occ-0-299-300.1.nflxso.net="" dnm="" api="" v6="" x194ejsgwbde2aqbandmcxgup-y="">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://cps-static.rovicorp.com/2/Open/Brainstorm_Media_1300/Program/5219436/_derived_jpg_q90_500x500_m0/SpiritedAway_2000x3000_021518.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()"></a>
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                    
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQd4JDbZrIIJ_KHfx_rMRy_ER6055BJrNBfZrLzM4HJ9rsL172p" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRnq1XgiWqipOvWHyQ4jW4LOabNAZbDmC1iOIpMUpBLgd7qabdS" alt="image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgk-iaLfIr23zFid2N-xtGtH4X4AM8htOzVqhDvpWapn9JV1sP" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://occ-0-2568-2567.1.nflxso.net/art/4d958/8d7361e45ccf96ad7551a36fb0775d94ac54d958.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div><div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTp0y1G8olmB4SjPov-p9wiaqxMYno4yVsODIiNalXHheKbXo0U" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkETC5JWhNPs7i_XIbtgaNCafGeOHP2Pno4ZhZedvjpCF-rs8U" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjEUKRcjk1j3f7jgYL8XVo_Hssj96TEuvQKnM7fqge5ltkJaN" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdCn7P_niNCbNFHt9vLgDc-YlRIhwvnCPtHzyiHVP_GK-XmDS1" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_WtELTzL-I56HrcqGKHv8jNG89VumRFmP63eLd-95hK7zuEF" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="http://www.cinema.com.my/images/movies/2020/7violetevergarden200_450.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                  <button class="goto-btn"><h4>►</h4></button>
+                                  </a>       
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://www.phoneswiki.com/wp-content/uploads/2021/01/Demon-Slayer-Kimetsu-no-Yaiba-the-Movie-Mugen-Train.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                     <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwe0dbJFZ79HDjb7Uqbw8R2_na3M04NAjqfnPASEo-FtjEm0pm" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSmz_O0Jt7zc37K_yTF5deEJdPrTAcsNt4QA0KNVeznVbVZGh2l" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBkIDC1pM2Smxkofb3oQk7gLMn-s9wFwCtiD4_R7F3h6W5YcNH" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel2" data-slide="prev" id="left2">‹</a>
+                    <a class="right carousel-control" href="#myCarousel2" data-slide="next" id="right2">›</a>
+                </div>
+            </div>
+        </div>
+    </div><div class="container3">
+        <h2 class="genre-title2">Studio Ghibli Films</h2>
+        <div class="col-xs-12">
+            <div class="well">
+                <div id="myCarousel3" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRN5ACejcOlGBCi8NMNbNjTgczf8AtZN4i8_F-f2SeXbxi5Mog_" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRJyktc4wXQ6ASqQbMxevhghYPCb9gSBVEBF-ZBJ8KtRyVqL7au" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQxJCqrnrjQju0gNNwnTHnsO1wUPRvi5OVlvoYw1PbDN4XzYw7k" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPEhh1ge6myhoErgGj5DoddT39uNNPfrdrNFpljS_jffvU-umv" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUJsQZyyOKebS8dPd-P2l1Ezmua32nwQj65dprZIQYRZnh5D4z" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>                                
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://www.scriptslug.com/assets/uploads/posters/_540xAUTO_crop_center-center_75_none/the-red-turtle-2016.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>                                
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRK_fuT4s-IiV0ceWtcNETln0L4r-GIC_6DQbC1V6UrYSRxa8_H" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                
+                                                               
+                                </div>
+                                                        </div>
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQntZTJb1c6O4iFaT_Ll3w4a-R3TzlpID2dJ0wDdwjemnMbOx7r" https:="" occ-0-299-300.1.nflxso.net="" dnm="" api="" v6="" x194ejsgwbde2aqbandmcxgup-y="">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQhBANlyskGnj8-hhTjBHS66owATYWWY2kb7Mtb8beDt-u3TMl4" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()"></a>
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                    
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRfmIqFx_udn2oAh4g_YW6JDhPH1yVufEsqb0HQGjpRaYT-F7jX" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkETC5JWhNPs7i_XIbtgaNCafGeOHP2Pno4ZhZedvjpCF-rs8U" alt="image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvHvc70JwNx02FUZgJkvxA1UaPpXGGj9qi7XQ5D86oo14RYlBi" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="http://pm1.narvii.com/6955/49ca5a3753748d6cec2b6840db588e7f28063f46r1-315-467v2_uhq.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div><div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ3gy0BOh3rY2r6jy1iTZiHImXBKQHpckBP140_OrDaPyjZrxyK" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX-OOxneThvqJIK9big6w3gdIuCFG7X180QOyvn2kZGyV10AEM" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRnq1XgiWqipOvWHyQ4jW4LOabNAZbDmC1iOIpMUpBLgd7qabdS" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQA8_Au5CrOKCqUrdh8tobozwQYyD-klw7t64dRu53iYdiZL7-f" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSS3nt1z_jkSHC2fpqlxrGZI9U1gDwx_W086Li0NiQkj97CIMi8" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTB-aPhETsbSh3xEek1Dl2GCSTJ61_FoqxPpNnRNVO_0ydZpCKL" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSzztC9qzLY6CkH-VFATngXqg4TtANeqXASNmGeVxh0hAhAE42r" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                  <button class="goto-btn"><h4>►</h4></button>
+                                  </a>       
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPCj2_9oJruYM7w1BqetCR6DjXziizuUix-hs50j7zKL06PpVn" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                     <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9eyBTSQKT046KVw4JqBy_lC-LSgkW5eZ382LHYMFw31zSIA4" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2uWbCDw6IuCDXbnz1zIbZ3OjKklgf6XwG2OV_jEd6NKJM2hba" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://cps-static.rovicorp.com/2/Open/Brainstorm_Media_1300/Program/5219436/_derived_jpg_q90_500x500_m0/SpiritedAway_2000x3000_021518.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel3" data-slide="prev" id="left3">‹</a>
+                    <a class="right carousel-control" href="#myCarousel3" data-slide="next" id="right3">›</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="container4">
+        <h2 class="genre-title3">Films Based on Anime Shows</h2>
+        <div class="col-xs-12">
+            <div class="well">
+                <div id="myCarousel4" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+                        
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://i.pinimg.com/originals/cb/0f/22/cb0f229cdbbfd1b47da93d875dc6ca01.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://i.pinimg.com/originals/66/1e/d6/661ed617d6209d8a5fe69b5c9c714007.jpg" https:="" occ-0-299-300.1.nflxso.net="" dnm="" api="" v6="" x194ejsgwbde2aqbandmcxgup-y="">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BNDkzMTBiM2YtM2ZkZi00NzM1LTg0ZWYtMTE1YmFiNzg5MjNmXkEyXkFqcGdeQXVyMjQ3NTQ4MjQ@._V1_.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()"></a>
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                    
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQrzk9I35YXxMgD4IbdEuioINPtIE4Ifap5_wSkfV4a8S83JL99" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://flxt.tmsimg.com/assets/p10281010_p_v10_aa.jpg" alt="image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTUxhGBvopCGnbiIwL5efJscYfZrNQ9zVYPGhqP4pEXTLKIZL7o" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://25.media.tumblr.com/tumblr_m5oygrIAeq1r8ban1o1_1280.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQE2z3QvD1QZo9lMYSOuBbR7H0v7NteYVf8gZ4eouoJHvzfvxt" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1JWyzyF1XNwA2rfpPi8SuERwJmDLeEXITXh-3LnnI_QIKjyQv" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BNzBiMTlhNTAtNDc4Yi00M2FiLWE3ODMtNzgwNWI3ZGFhYjNkXkEyXkFqcGdeQXVyMjQ5NjMxNDA@._V1_.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ23IudplKcqdXi7uVcYXBMf-gMpyPSfkm01ZNugVLwFltxzGr" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxZMby8EP8qiYak5_w6Qq_hwujtosncWKiZLNBmRXFNzcx4TJG" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRsYeUSii04pmtFRQa3IfyUyNTVAT2wPMNszJgyjMsUojl1C5sh" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                    
+                                    <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://i.pinimg.com/originals/89/f5/21/89f521c28cefa4df42ca2de1a4fad270.jpg" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                  <button class="goto-btn"><h4>►</h4></button>
+                                  </a>       
+                                </div>
+                                <div class="col-xs-3">
+                                  <a href="#x" class="thumbnail">
+                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS43ivrnv5ysC_jlKzHyvIBnq1PxE_71PKMzpX8SBh0QGpxfgJ_" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                     <button class="goto-btn"><h4>►</h4></button>
+                                  </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBUcIJBIWccwqwZu69L95fV5S-omXsQ8U1icVeP0bmWkV2zBda" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcThxpNuiQlrJH5UngzR0WbPxNyDf4JFeArpWj7Evl8g0onGAslm" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="#x" class="thumbnail">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR4LMmEcwtzTCvBtTNBayhwmwp_Q2mDZ4IFZ2y2de4wVyVmASR" alt="Image" class="img-responsive" name="attack on titan" onclick="getinfo()">
+                                        <button class="goto-btn"><h4>►</h4></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel4" data-slide="prev" id="left4">‹</a>
+                    <a class="right carousel-control" href="#myCarousel4" data-slide="next" id="right4">›</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+    <script src="./renderer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="index.js"></script>
+    <script src="assets/movie.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="titlebar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="all" id="fa-main"></style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="icon" href="icons/app-icon.png">
+    <title>Core Anime</title>
+</head>
+<body class="home-body">
+  <div class="titlebar">
+    <div class="left-content topcontent">
+      <img src="images/logo-medium-sm-white.png" onclick="location.href='index.html'">  
+    </div>
+    <div class="dragbar">   
+    </div>
+    <div class="right-content topcontent">
+      <div> 
+        <button id="minimize" class="minmax">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 1.24" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <rect width="15" height="1.24"></rect>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button id="maximize" class="minmax">
+            <span>
+                <span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M15,15H0V0H15ZM1.24,13.76H13.76V1.24H1.24Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button class="exitbtn" id="close" >
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M14.34,15a.65.65,0,0,1-.46-.19L.19,1.12a.67.67,0,0,1,0-.93.67.67,0,0,1,.93,0L14.81,13.88a.67.67,0,0,1,0,.93A.66.66,0,0,1,14.34,15Z"></path>
+                        </g>
+                        <g>
+                            <path d="M.65,15a.65.65,0,0,1-.46-.19.67.67,0,0,1,0-.93L13.88.19a.67.67,0,0,1,.93,0,.67.67,0,0,1,0,.93L1.12,14.81A.66.66,0,0,1,.65,15Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup" style="display: none;">
+    <div class="back"><svg onclick="nonepop()" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14 fa-3x"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" class=""></path></svg></div>
+    <div class="popimg"></div>
+    <h1 class="popup_title"></h1>
+    <div class="watch-box">
+        <button onclick="returntitlemovie()" class="wbut">Watch Now ➔</button>
+    </div>
+  </div>
+  <div class="discont" id="content-cont">
+    <iframe id="watchframe" src="" allowfullscreen></iframe>
+  </div>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="tv.html">Shows</a> 
+        <a href="movies.html" class="active">Movies</a>
+        <a href="search.html">Search</a>
+    </div>
+    <div id="mySidenav" class="sidenav" style="width: 0px;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="popout-txt" href="index.html">Home</a>
+        <a class="popout-txt" href="tv.html">Shows</a>
+        <a class="popout-txt" href="movies.html">Movies</a>
+        <a class="popout-txt" href="search.html">Search</a>
+        <a class="popout-txt" href="calender.html">Calender</a>
+        <a class="popout-txt" href="new.html">Join News Letter</a>
+        <a class="popout-txt" href="tos.html">Terms Of Service</a>
+    </div>
+    <span onclick="openNav()" class="side-nav-opn">☰</span>
+    <a id="id"></a>
+    <a id="genre"></a>
+    <a id="imdbid"></a>
+    <a id="big_id"></a>
+<div class="main-container">
+    <div class="main-text-holder">
+        <h1>Your Name</h1>
+        <p>Your Name tells the story of a high school boy in Tokyo and a high school girl in the Japanese countryside who suddenly and inexplicably begin to swap bodies. The film stars Ryunosuke Kamiki and Mone Kamishiraishi</p>
+    <div class="button-container">
+        <button onclick="returnyourname()" id="play">Play Now ►</button>
+        <button title="11" name="movies" onclick="document.getElementById('id').innerHTML = this.title; document.getElementById('genre').innerHTML = this.name; watch();" id="info">More Details</button>
+    </div>
+    </div>
+</div>
+<div class="all-rows"></div>
+<div class="big-content-reg">
+    <h1>Eye Candy</h1>
+    <div class="big-content-images">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="65" src="https://occ-0-1091-299.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTFYZGNcatgSfkyp8mDDI_b-sU3xUSeCKSSlBiGlXad13FKAGJ5QrdSnup7SNjmOcFvE9ROLe8okMQgNKxiMa0U9N22c.jpg?r=ce7">         <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="58" src="https://occ-0-56-55.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABYv4i_wWOIM_mu3WNc4inkSzRJIXp6_Fu3zblWw69LF5IzOMbLaFkOQbe87aAs2WLRnh0heSlZvIXAc4KywgcVjJxdQg.jpg?r=4d4">         <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="80" src="https://occ-0-2218-2219.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABaJei1U2qdNP6qwYfNwz8d-tAhrvPxgieYRiAz3AXLNrRxfjk8rc1i8vHDIUm-2JxhNFYpJafC3pN6ayGEYqfpzaspg9diK5C-VoChIffUOsdxYpMwRv2uCyM0PX7Q.jpg?r=ce3">         <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="157" src="https://occ-0-1091-299.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABYZJmlktlV421VMcE4MkwPZNHM_rjk1EwFXHoQB2deEl0_Ygxg2KRNrDXGxjSKEalp2DH2Z5IZFfCZ_JvMpL2_HOfoNu.jpg?r=4bd">         <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="152" src="https://occ-0-2705-2706.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABeXwWoSnibns3EJgkypTPYf4nrzoN8upN-cTPnqw1IddBGV6djadJ6FBc03OGZd2-DLLkHNk3EgwoAVmY64LwCYQBg3n.jpg?r=05d">         <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="56" src="https://occ-0-2430-2433.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABQcuePeqMGmw0ggJMC0ZjF7zavbNfF-1taYd8xsxSpC7qxxiHEwrl2k_rz9lSYFYWAq0dFSmBUcWe-dnoIo1xB64Lb8x.jpg?r=3cf">                <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="search_anime" name="66" src="https://occ-0-784-778.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABQePnoE57n_KrayMsEbbkPtYr7HVvE8tvQWk1R_mqXwz1ciZsg7_SaaecIHoghqcH8V0eY2bW_YTLuPj2drNFxPmpFAQ.jpg?r=6c6"></div></div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./renderer.js"></script>
+    <script>
+    </script>
+</body>
+</html>

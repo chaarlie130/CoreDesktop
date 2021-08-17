@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+body,html {
+  background: linear-gradient(305deg, #000000, #13212a);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.cal-wrapper {
+  width: 1575px;
+  height: 800px;
+  background-color: #888888;
+  margin-right: 100px;
+  margin-left: 150px;
+  margin-bottom: 00px;
+  margin-top: 100px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #000000;
+}
+#nav-txt {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.57; 
+  color: white;
+  background-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+
+}
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  line-height: 1.57;
+}
+.topnav a.active {
+  background-color: #070707;
+  color: white;
+  border-radius: 4px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #070707;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.side-nav-opn {
+  position:absolute;
+  color:white;
+  top: 10px; 
+  left: 1850px;
+  font-size:30px;
+  cursor:pointer;
+  transition: 0.1s
+}
+.side-nav-opn:hover {
+  color: #5b5b5b
+}
+.popout-txt{
+  border-bottom: 0.5px solid #4c4b4b;
+  margin-top: 15px;
+  font-size: 22px !important;
+  font-family: 'Poppins', sans-serif;
+
+}
+.popout-txt:hover {
+  text-decoration: none !important;
+  border-bottom: 0.5px solid white;
+}
+.closebtn:hover {
+  text-decoration: none !important;
+}
+.closebtn {
+  font-family: 'Poppins', sans-serif;
+}
+#home-icon {
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 2em;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  color: white;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  transition: 0.3s;
+  font-size: 2em
+}
+#home-icon:hover {
+  color: #5b5b5b
+}
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 500;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
+}

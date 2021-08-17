@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="index.js"></script>
+    <script src="main.js"></script>
+    <script src="assets/tv.js"></script>
+    <link rel="stylesheet" href="tv.css">
+    <link rel="stylesheet" href="titlebar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="all" id="fa-main"></style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="icon" href="icons/app-icon.png">
+    <title>Core Anime</title>
+</head>
+<body class="home-body" onload="createad()">
+  <div class="titlebar">
+    <div class="left-content topcontent">
+      <img src="images/logo-medium-sm-white.png" onclick="location.href='index.html'">  
+    </div>
+    <div class="dragbar">   
+    </div>
+    <div class="right-content topcontent">
+      <div> 
+        <button id="minimize" class="minmax">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 1.24" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <rect width="15" height="1.24"></rect>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button id="maximize" class="minmax">
+            <span>
+                <span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M15,15H0V0H15ZM1.24,13.76H13.76V1.24H1.24Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button><button class="exitbtn" id="close" >
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 15 15" fill="currentColor">
+                        <g>
+                        <g>
+                        <g>
+                        <g>
+                            <path d="M14.34,15a.65.65,0,0,1-.46-.19L.19,1.12a.67.67,0,0,1,0-.93.67.67,0,0,1,.93,0L14.81,13.88a.67.67,0,0,1,0,.93A.66.66,0,0,1,14.34,15Z"></path>
+                        </g>
+                        <g>
+                            <path d="M.65,15a.65.65,0,0,1-.46-.19.67.67,0,0,1,0-.93L13.88.19a.67.67,0,0,1,.93,0,.67.67,0,0,1,0,.93L1.12,14.81A.66.66,0,0,1,.65,15Z"></path>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup" style="display: none;">
+    <div class="back"><svg onclick="nonepop()" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14 fa-3x"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" class=""></path></svg></div>
+    <div class="popimg"></div>
+    <h1 class="popup_title"></h1>
+    <div class="watch-box">
+        <input class="winp sesn" id="watchseasn" placeholder="season">
+        <input class="winp epis" id="watchsepis" placeholder="episode">
+        <button onclick="returntitle()" class="wbut">Watch Now ➔</button>
+    </div>
+  </div>
+  <div class="discont" id="content-cont">
+    <iframe id="watchframe" src="" allowfullscreen></iframe>
+  </div>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="tv.html" class="active">Shows</a> 
+        <a href="movies.html">Movies</a>
+        <a href="search.html">Search</a>
+    </div>
+    <div id="mySidenav" class="sidenav" style="width: 0px;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="popout-txt" href="index.html">Home</a>
+        <a class="popout-txt" href="tv.html">Shows</a>
+        <a class="popout-txt" href="movies.html">Movies</a>
+        <a class="popout-txt" href="search.html">Search</a>
+        <a class="popout-txt" href="calender.html">Calender</a>
+        <a class="popout-txt" href="new.html">Join News Letter</a>
+        <a class="popout-txt" href="tos.html">Terms Of Service</a>
+    </div>
+    <a id="id"></a>
+    <a id="genre"></a>
+    <a id="imdbid"></a>
+    <a id="big_id"></a>
+    <span onclick="" class="side-nav-opn">☰</span>
+    <div class="big-content">
+      <h1>Editors Picks</h1>
+      <div class="big-content-images">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_Action" name="8" src="https://i.ibb.co/nwPGMPj/image.png">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_top" name="0" src="https://i.ibb.co/MPMmXR1/image.png">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_Romance" name="14" src="https://m.media-amazon.com/images/M/MV5BM2RmZmI2NmUtNDhjMi00MGQ4LWIyYTEtZmMxM2E1ZjBkYTU0XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_UY1200_CR93,0,630,1200_AL_.jpg">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_top" name="2" src="https://i.ibb.co/6wvfPsd/image.png">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_top" name="8"  src="Tall_images/demon_tall.png">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_top" name="25" src="https://m.media-amazon.com/images/M/MV5BMDkxZTJjZTEtMDRjMy00Yzk1LWI5YjItMjIwYmVlYzhlZWZhXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_UY1200_CR85,0,630,1200_AL_.jpg">
+        <img onclick="document.getElementById('genre').innerHTML = this.title; document.getElementById('id').innerHTML = this.name; watch();" title="Shows_Shonen" name="7" src="https://i.ibb.co/vVSXQGg/Screenshot-2021-02-19-211546.png" style="margin-left: 4px;">
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./renderer.js"></script>
+    <script></script>
+</body>
+</html>
